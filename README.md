@@ -33,7 +33,7 @@ There are three services that make this work:
 |---------|-------------|---------|
 | **Git** | Tracks every change ever made to your files, like a detailed history log | Think of it like "Track Changes" in Google Docs, but for your whole website |
 | **GitHub** | Stores your files online so they're backed up and accessible from any computer | Like Google Drive, but specifically designed for code |
-| **Vercel** | Takes your files from GitHub and turns them into a live website anyone can visit | The "Publish" button that makes everything go live |
+| **Vercel** | Takes your files from GitHub and turns them into a live website anyone can visit (Kedar manages this) | The "Publish" button that makes everything go live |
 
 You won't need to learn how any of these work. Claude handles all of it. But it helps to know they exist so the process makes sense.
 
@@ -65,10 +65,7 @@ You'll need accounts on three free services. Set these up first:
 2. Click **Sign Up** and create an account
 3. Add a payment method when prompted — Claude Code charges a small amount per session (usually a few dollars for a full working session)
 
-### Vercel Account (what makes your website live)
-1. Go to **https://vercel.com/signup**
-2. Choose **"Continue with GitHub"** — this connects it to the GitHub account you just made
-3. That's it — Vercel will automatically know about your website files
+You don't need a Vercel account — the website is hosted under Kedar's Vercel. When you're ready to make changes go live, just push to GitHub and ask Kedar to deploy, or he can set it up to deploy automatically.
 
 ---
 
@@ -180,32 +177,36 @@ Commit my changes with a message describing what I changed
 
 Claude will save a snapshot. Your changes are now safely recorded on your computer — but they're still not live yet.
 
-### Part 2: Publish to Your Live Website (Pushing & Deploying)
+### Part 2: Push Your Changes Online (Pushing)
 
-Now you need to send your saved changes to GitHub (the online backup) and then to Vercel (which makes it live). Tell Claude:
+Now you need to send your saved changes to GitHub (the online backup). Tell Claude:
 
 ```
-Push my changes to GitHub and deploy to Vercel
+Push my changes to GitHub
 ```
 
-Within a minute or two, your live site at **https://decluttering-with-val.vercel.app** will be updated for everyone to see.
+Your changes are now backed up online and visible in the GitHub repository.
+
+### Part 3: Make It Live (Deploying)
+
+The live website is hosted under Kedar's Vercel account. Once you've pushed your changes to GitHub, just text Kedar and let him know — he'll deploy the update and your live site at **https://decluttering-with-val.vercel.app** will be updated for everyone to see.
 
 ### The Shortcut
 
-If you want to do both steps at once, just tell Claude:
+If you want to save and push in one step, just tell Claude:
 
 ```
-Commit my changes, push to GitHub, and deploy to Vercel
+Commit my changes and push to GitHub
 ```
 
-Claude handles the whole thing.
+Claude handles both at once.
 
 ### What Just Happened — In Plain English
 
 ```
 1. COMMIT  →  Claude saved a snapshot of your changes (like hitting "Save")
 2. PUSH    →  Claude uploaded that snapshot to GitHub (your online backup)
-3. DEPLOY  →  Vercel saw the new files on GitHub and updated your live website
+3. DEPLOY  →  Kedar publishes the update to the live website
 ```
 
 ---
@@ -220,8 +221,8 @@ Here's what a typical session looks like:
 3. Tell Claude to start the local preview server
 4. Describe the changes you want
 5. Preview them in your browser
-6. When you're happy, tell Claude to commit, push, and deploy
-7. Check your live site to confirm everything looks good
+6. When you're happy, tell Claude to commit and push to GitHub
+7. Text Kedar to deploy, then check your live site
 8. Done!
 ```
 
@@ -276,8 +277,9 @@ Undo all changes since the last commit
 ```
 
 ### The live site looks different from your local preview
+Text Kedar to redeploy, or ask Claude:
 ```
-Can you redeploy the site to Vercel? Something seems out of sync.
+Did I forget to push my latest changes to GitHub?
 ```
 
 ### You're not sure what changed
